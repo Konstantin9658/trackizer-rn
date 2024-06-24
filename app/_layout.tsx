@@ -1,37 +1,60 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+import TrackizerLogo from "@/components/Logo/Logo";
+import { Colors } from "@/constants/Colors";
+import { stylesContainer } from "@/styles/container";
+import { stylesLogo } from "@/styles/logo";
+import { stylesMain } from "@/styles/main";
+import { useFonts } from "expo-font";
+import { Stack, SplashScreen } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { useCallback } from "react";
+import { View } from "react-native";
+import { SafeAreaProvider, useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
+	const insets = useSafeAreaInsets();
 
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
+	const [fontsLoaded, fontError] = useFonts({
+		"Inter-400": require("../assets/fonts/Inter-Regular.ttf"),
+		"Inter-500": require("../assets/fonts/Inter-Medium.ttf"),
+		"Inter-600": require("../assets/fonts/Inter-SemiBold.ttf"),
+	});
 
-  if (!loaded) {
-    return null;
-  }
+	const onLayoutRootView = useCallback(async () => {
+		if (fontsLoaded || fontError) {
+			await SplashScreen.hideAsync();
+		}
+	}, [fontsLoaded, fontError]);
 
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
-  );
+	if (!fontsLoaded) return null;
+
+	return (
+		<>
+			<SafeAreaProvider>
+				<StatusBar style="light" />
+				<View style={stylesMain.main} onLayout={onLayoutRootView}>
+					<View style={stylesContainer.container}>
+						<View style={stylesLogo.logo}>
+							<TrackizerLogo />
+						</View>
+						<Stack
+							screenOptions={{
+								contentStyle: {
+									backgroundColor: Colors.grayscale.gray_80,
+									paddingTop: insets.top,
+									paddingBottom: insets.bottom,
+								},
+								headerShown: false,
+							}}
+						>
+							<Stack.Screen name="index" />
+							<Stack.Screen name="register/index" />
+							<Stack.Screen name="register/email" />
+						</Stack>
+					</View>
+				</View>
+			</SafeAreaProvider>
+		</>
+	);
 }
