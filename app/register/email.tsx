@@ -1,9 +1,5 @@
-import { View, Text } from "react-native";
+import { RegisterEmailScreen } from "@/screens/register/RegisterEmail";
 
 export default function RegisterEmail() {
-	return (
-		<View>
-			<Text></Text>
-		</View>
-	);
+  return <RegisterEmailScreen />;
 }
