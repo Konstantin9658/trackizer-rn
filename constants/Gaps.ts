@@ -1,3 +1,3 @@
 export const Gaps = {
-	g16: 16,
+  g16: 16,
 };
