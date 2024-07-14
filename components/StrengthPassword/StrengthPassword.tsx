@@ -7,8 +7,8 @@ interface StrengthPasswordProps {
 }
 
 export const StrengthPassword = ({ password }: StrengthPasswordProps) => {
-  console.log(passwordStrength(password).value);
   const passStrength = passwordStrength(password).id;
+
   return (
     <View>
       <View style={styles.wrapper}>
