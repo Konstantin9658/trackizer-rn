@@ -44,10 +44,10 @@ const styles = StyleSheet.create({
 });
 
 export const Welcome = () => {
-  const sourceDecorLeft = require("../assets/images/Welcome/welcome-decor-left.png");
-  const sourceDecorRight = require("../assets/images/Welcome/welcome-decor-right.png");
-  const sourceHighlight = require("../assets/images/Welcome/welcome-highlight.png");
-  const sourceImage = require("../assets/images/Welcome/welcome.png");
+  const sourceDecorLeft = require("../../assets/images/Welcome/welcome-decor-left.png");
+  const sourceDecorRight = require("../../assets/images/Welcome/welcome-decor-right.png");
+  const sourceHighlight = require("../../assets/images/Welcome/welcome-highlight.png");
+  const sourceImage = require("../../assets/images/Welcome/welcome.png");
 
   return (
     <>

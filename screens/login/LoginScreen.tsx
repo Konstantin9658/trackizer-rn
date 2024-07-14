@@ -1,27 +1,29 @@
 import { View, Text, TouchableWithoutFeedback, Keyboard } from "react-native";
-import { styles } from "./styles";
 import { Input } from "@/components/Input/Input";
 import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
 import { Routes } from "@/constants/Routes";
+import { styles } from "../register/styles";
 
-export const RegisterEmailScreen = () => {
+export const LoginScreen = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <View style={styles.wrapper}>
         <View style={styles.wrapperCenter}>
           <View style={styles.input_group}>
-            <Input label="E-mail address" />
-            <Input isRegister isPassword label="Password" />
+            <Input label="Login" />
+            <Input isLogin isPassword label="Password" />
           </View>
-          <ButtonLink
-            route={Routes.index}
-            text="Get started, it’s free!"
-            variant="primary"
-          />
+          <ButtonLink route={Routes.index} text="Sign In" variant="primary" />
         </View>
         <View>
-          <Text style={styles.signInText}>Do you have already an account?</Text>
-          <ButtonLink route={Routes.login} text="Sign In" variant="secondary" />
+          <Text style={styles.signInText}>
+            If you don't have an account yet?
+          </Text>
+          <ButtonLink
+            route={Routes.register}
+            text="Sign Up"
+            variant="secondary"
+          />
         </View>
       </View>
     </TouchableWithoutFeedback>

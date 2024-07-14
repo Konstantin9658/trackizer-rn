@@ -1,41 +1,34 @@
 import { TextInput, Text, View } from "react-native";
-import { inputStyles } from "./styles";
+import { styles } from "./styles";
 import { InputProps } from "./Input.types";
-// import { useState } from "react";
+import { useState } from "react";
+import { StrengthPassword } from "../StrengthPassword/StrengthPassword";
+import { Checkbox } from "../Checkbox/Checkbox";
 
 export const Input = ({
   label,
-  isPassword,
+  isPassword = false,
+  isCenteredLabel = false,
+  isLogin = false,
   isRegister = false,
   ...props
 }: InputProps) => {
-  // const [password, setPassword] = useState<string>("");
+  const [, setText] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   return (
-    <View style={inputStyles.wrapper}>
-      {label && <Text style={inputStyles.label}>{label}</Text>}
+    <View>
+      <Text style={[styles.label, isCenteredLabel && styles.labelCentered]}>
+        {label}
+      </Text>
       <TextInput
+        autoCapitalize="none"
         secureTextEntry={isPassword}
-        style={inputStyles.input}
+        onChangeText={isPassword ? setPassword : setText}
+        style={styles.input}
         {...props}
       />
-      {isRegister && (
-        <View>
-          <View style={inputStyles.passLevel}>
-            <View
-              style={[inputStyles.passLevelBox, inputStyles.passLevelBoxFirst]}
-            />
-            <View style={inputStyles.passLevelBox} />
-            <View style={inputStyles.passLevelBox} />
-            <View
-              style={[inputStyles.passLevelBox, inputStyles.passLevelBoxLast]}
-            />
-          </View>
-          <Text style={inputStyles.passLevelDesription}>
-            Use 8 or more characters with a mix of letters,
-            numbers&nbsp;&&nbsp;symbols.
-          </Text>
-        </View>
-      )}
+      {isRegister && <StrengthPassword password={password} />}
+      {isLogin && <Checkbox />}
     </View>
   );
 };
