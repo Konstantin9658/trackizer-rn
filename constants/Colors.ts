@@ -2,6 +2,8 @@ export const Colors = {
   white: "#FFFFFF",
   black: "#000000",
   blue: "#1771E6",
+  yellow: "#F9C31A",
+  green: "#53C654",
   red: "#CC384E",
   grayscale: {
     gray_100: "#0E0E12",

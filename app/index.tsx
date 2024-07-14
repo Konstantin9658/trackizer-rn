@@ -1,4 +1,4 @@
-import { Welcome } from "@/screens/Welcome";
+import { Welcome } from "@/screens/welcome/Welcome";
 import { View, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
