@@ -18,13 +18,16 @@ export const styles = StyleSheet.create({
   indicator_tooweak: {
     backgroundColor: Colors.red,
   },
-  indicator_weak: {
+  tooweak: {
+    backgroundColor: Colors.red,
+  },
+  weak: {
     backgroundColor: Colors.yellow,
   },
-  indicator_medium: {
+  medium: {
     backgroundColor: Colors.yellow,
   },
-  indicator_strong: {
+  strong: {
     backgroundColor: Colors.green,
   },
   indicatorFirst: {

@@ -4,11 +4,10 @@ import BouncyCheckbox, {
   BouncyCheckboxHandle,
 } from "react-native-bouncy-checkbox";
 import { View, Text } from "react-native";
-import { Link } from "expo-router";
-import { Routes } from "@/constants/Routes";
 import { useRef } from "react";
+import { CheckboxProps } from "./types";
 
-export const Checkbox = () => {
+export const Checkbox = ({ label, ...props }: CheckboxProps) => {
   const bouncyCheckboxRef = useRef<BouncyCheckboxHandle | null>(null);
 
   const handlePressText = () => {
@@ -19,27 +18,30 @@ export const Checkbox = () => {
 
   return (
     <View style={styles.wrapper}>
-      <View style={styles.checkboxWrapper}>
-        <BouncyCheckbox
-          ref={bouncyCheckboxRef}
-          size={25}
-          fillColor={Colors.accent_primary.accent_p_100}
-          disableText
-          textStyle={styles.text}
-          textContainerStyle={styles.textContainer}
-          iconStyle={styles.icon}
-          innerIconStyle={styles.innerIcon}
-          onPress={(isChecked: boolean) => {
-            console.log(isChecked);
-          }}
-        />
-        <Text style={[styles.text, styles.textLabel]} onPress={handlePressText}>
-          Remember me
+      <BouncyCheckbox
+        ref={bouncyCheckboxRef}
+        size={25}
+        fillColor={Colors.accent_primary.accent_p_100}
+        disableText
+        iconStyle={styles.icon}
+        innerIconStyle={styles.innerIcon}
+        {...props}
+      />
+      {label && (
+        <Text
+          suppressHighlighting
+          style={styles.label}
+          onPress={handlePressText}
+        >
+          {label}
         </Text>
-      </View>
-      <Link asChild href={Routes.index}>
-        <Text style={styles.text}>Forgot password</Text>
-      </Link>
+      )}
     </View>
+    // <View style={styles.wrapper}>
+
+    //   <Link asChild href={Routes.index}>
+    //     <Text style={styles.text}>Forgot password</Text>
+    //   </Link>
+    // </View>
   );
 };

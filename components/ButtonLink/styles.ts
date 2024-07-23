@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     height: 48,
     borderRadius: 30,
     borderWidth: 1,
+    overflow: "hidden",
   },
   link_primary: {
     borderColor: BorderColor.accent,
@@ -17,6 +18,7 @@ export const styles = StyleSheet.create({
   },
   link_secondary: {
     borderColor: BorderColor.light_dark,
+    backgroundColor: "#323239",
   },
   text: {
     color: Colors.white,

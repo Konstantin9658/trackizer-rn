@@ -1,10 +1,9 @@
 import { ExpoRouter } from "expo-router/types/expo-router";
-import { PressableProps } from "react-native";
 
-export type VariantLink = "primary" | "secondary";
+export type VariantButton = "primary" | "secondary";
 
-export interface ButtonLinkProps extends PressableProps {
+export interface ButtonLinkProps {
   text: string;
-  variant: VariantLink;
+  variant: VariantButton;
   route: ExpoRouter.Href;
 }

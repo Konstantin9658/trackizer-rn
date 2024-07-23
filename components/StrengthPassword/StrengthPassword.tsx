@@ -1,13 +1,15 @@
 import { View, Text } from "react-native";
 import { styles } from "./styles";
 import { passwordStrength } from "check-password-strength";
-
-interface StrengthPasswordProps {
-  password: string;
-}
+import { StrengthPasswordProps, PassLevelType } from "./types";
 
 export const StrengthPassword = ({ password }: StrengthPasswordProps) => {
   const passStrength = passwordStrength(password).id;
+
+  const pass = passwordStrength(password)
+    .value.toLowerCase()
+    .split(/\s+/)
+    .join("") as PassLevelType;
 
   return (
     <View>
@@ -16,25 +18,16 @@ export const StrengthPassword = ({ password }: StrengthPasswordProps) => {
           style={[
             styles.indicator,
             styles.indicatorFirst,
-            passStrength >= 0 &&
-              password.length !== 0 &&
-              styles.indicator_tooweak,
+            password.length !== 0 && styles[pass],
           ]}
         />
-        <View
-          style={[styles.indicator, passStrength >= 1 && styles.indicator_weak]}
-        />
-        <View
-          style={[
-            styles.indicator,
-            passStrength >= 2 && styles.indicator_medium,
-          ]}
-        />
+        <View style={[styles.indicator, passStrength >= 1 && styles[pass]]} />
+        <View style={[styles.indicator, passStrength >= 2 && styles[pass]]} />
         <View
           style={[
             styles.indicator,
             styles.indicatorLast,
-            passStrength === 3 && styles.indicator_strong,
+            passStrength === 3 && styles[pass],
           ]}
         />
       </View>
