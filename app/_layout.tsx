@@ -33,32 +33,27 @@ export default function RootLayout() {
   if (!fontsLoaded) return null;
 
   return (
-    <>
-      <SafeAreaProvider>
-        <StatusBar style="light" />
-        <View style={stylesMain.main} onLayout={onLayoutRootView}>
-          <View style={stylesContainer.container}>
-            <View style={stylesLogo.logo}>
-              <TrackizerLogo />
-            </View>
-            <Stack
-              screenOptions={{
-                contentStyle: {
-                  backgroundColor: Colors.grayscale.gray_80,
-                  paddingTop: insets.top,
-                  paddingBottom: insets.bottom,
-                },
-                headerShown: false,
-              }}
-            >
-              <Stack.Screen name="index" />
-              <Stack.Screen name="login" />
-              <Stack.Screen name="register/index" />
-              <Stack.Screen name="register/email" />
-            </Stack>
+    <SafeAreaProvider>
+      <StatusBar style="light" />
+      <View style={stylesMain.main} onLayout={onLayoutRootView}>
+        <View style={stylesContainer.container}>
+          <View style={stylesLogo.logo}>
+            <TrackizerLogo />
           </View>
+          <Stack
+            screenOptions={{
+              contentStyle: {
+                backgroundColor: Colors.grayscale.gray_80,
+                paddingTop: insets.top,
+                paddingBottom: insets.bottom,
+              },
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name="index" />
+          </Stack>
         </View>
-      </SafeAreaProvider>
-    </>
+      </View>
+    </SafeAreaProvider>
   );
 }

@@ -1,18 +1,5 @@
-import { Welcome } from "@/screens/welcome/Welcome";
-import { View, StyleSheet } from "react-native";
+import { WelcomeScreen } from "@/screens/welcome/WelcomeScreen";
 
-const styles = StyleSheet.create({
-  app: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
-
-export default function Index() {
-  return (
-    <View style={styles.app}>
-      <Welcome />
-    </View>
-  );
+export default function Welcome() {
+  return <WelcomeScreen />;
 }
