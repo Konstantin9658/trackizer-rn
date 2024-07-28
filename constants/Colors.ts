@@ -5,6 +5,7 @@ export const Colors = {
   yellow: "#F9C31A",
   green: "#53C654",
   red: "#CC384E",
+  light_dark: "#323239",
   grayscale: {
     gray_100: "#0E0E12",
     gray_80: "#1C1C23",
@@ -38,5 +39,5 @@ export const Colors = {
 export const BorderColor = {
   accent: "rgba(255, 121, 102, 0.5)",
   blue: "rgba(23, 113, 230, 0.5)",
-  light_dark: "rgba(255, 255, 255, 0.1)",
+  black_10: "rgba(255, 255, 255, 0.1)",
 };

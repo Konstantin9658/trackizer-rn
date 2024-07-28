@@ -3,12 +3,6 @@ import { FontSize, LineHeight } from "@/constants/Typography";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  // wrapper: {
-  //   marginTop: 24,
-  //   flexDirection: "row",
-  //   alignItems: "center",
-  //   justifyContent: "space-between",
-  // },
   wrapper: {
     flexDirection: "row",
     alignItems: "center",

@@ -1,17 +1,19 @@
+import { commonStyles } from "../commonStyles";
 import { View, Text, TouchableWithoutFeedback, Keyboard } from "react-native";
-import { styles } from "../commonStyles";
-import { Input } from "@/components/Input/Input";
-import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
 import { Routes } from "@/constants/Routes";
-// import { useState } from "react";
-import { Password } from "@/components/Password/Password";
 import { Controller, useForm } from "react-hook-form";
-import { Button } from "@/components/Button/Button";
 import { SignUpFormData } from "./types";
+import {
+  Input,
+  Password,
+  StrengthPassword,
+  Button,
+  ButtonLink,
+  Header,
+} from "@/components";
+import { router } from "expo-router";
 
 export const SignUpScreen = () => {
-  // const [, setEmail] = useState<string>("");
-
   const {
     control,
     handleSubmit,
@@ -25,24 +27,32 @@ export const SignUpScreen = () => {
 
   const onSubmit = (data: SignUpFormData) => {
     console.log(data);
+    router.replace(Routes.home);
   };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-      <View style={styles.wrapper}>
-        <View style={styles.wrapperCenter}>
-          <View style={styles.inputGroup}>
+      <View style={commonStyles.wrapper}>
+        <Header />
+        <View style={commonStyles.wrapperCenter}>
+          <View style={commonStyles.inputGroup}>
             <Controller
               name="email"
               control={control}
-              rules={{ required: "Required" }}
+              rules={{
+                required: { value: true, message: "Required" },
+                pattern: {
+                  value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+                  message: "Please enter correct email address",
+                },
+              }}
               render={({ field }) => (
                 <Input
                   value={field.value}
                   keyboardType="email-address"
                   blurOnSubmit
                   inputMode="email"
-                  isInvalid={!!errors.email}
+                  hasError={!!errors.email}
                   errorMessage={errors.email?.message}
                   onChangeText={field.onChange}
                   label="E-mail address"
@@ -52,26 +62,33 @@ export const SignUpScreen = () => {
             <Controller
               name="password"
               control={control}
-              rules={{ required: "Please enter password" }}
+              rules={{
+                required: { value: true, message: "Please enter password" },
+                minLength: { value: 8, message: "Use 8 or more symbols" },
+              }}
               render={({ field }) => (
-                <Password
-                  isSignUp
-                  isInvalid={!!errors.password}
-                  errorMessage={errors.password?.message}
-                  value={field.value}
-                  onChangeText={field.onChange}
-                />
+                <View>
+                  <Password
+                    hasError={!!errors.password}
+                    errorMessage={errors.password?.message}
+                    value={field.value}
+                    onChangeText={field.onChange}
+                  />
+                  <StrengthPassword password={field.value ?? ""} />
+                </View>
               )}
             />
           </View>
           <Button
+            text="Get started, it’s free!"
             onPress={handleSubmit(onSubmit)}
-            title="Get started, it’s free!"
             variant="primary"
           />
         </View>
         <View>
-          <Text style={styles.signInText}>Do you have already an account?</Text>
+          <Text style={commonStyles.signInText}>
+            Do you have already an account?
+          </Text>
           <ButtonLink route={Routes.login} text="Sign In" variant="secondary" />
         </View>
       </View>

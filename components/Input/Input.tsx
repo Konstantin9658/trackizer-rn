@@ -2,10 +2,11 @@ import { TextInput, Text, View } from "react-native";
 import { styles } from "./styles";
 import { InputProps } from "./types";
 import { HelperText } from "../HelperText/HelperText";
+import { Colors } from "@/constants/Colors";
 
 export const Input = ({
   label,
-  isInvalid = false,
+  hasError = false,
   errorMessage,
   isCenteredLabel = false,
   ...props
@@ -17,10 +18,11 @@ export const Input = ({
       </Text>
       <TextInput
         autoCapitalize="none"
-        style={[styles.input, isInvalid && styles.input_error]}
+        selectionColor={Colors.white}
+        style={[styles.input, hasError && styles.input_error]}
         {...props}
       />
-      {isInvalid && <HelperText text={errorMessage} type="error" />}
+      {hasError && <HelperText text={errorMessage} type="error" />}
     </View>
   );
 };

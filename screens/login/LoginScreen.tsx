@@ -5,17 +5,20 @@ import {
   Keyboard,
   TouchableOpacity,
 } from "react-native";
-import { Input } from "@/components/Input/Input";
-import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
 import { Routes } from "@/constants/Routes";
-import { styles } from "../commonStyles";
-import { styles as loginStyles } from "./styles";
-import { Checkbox } from "@/components/Checkbox/Checkbox";
-import { Password } from "@/components/Password/Password";
+import { commonStyles } from "../commonStyles";
+import { styles } from "./styles";
 import { Link } from "expo-router";
 import { Controller, useForm } from "react-hook-form";
 import { LoginFormData } from "./types";
-import { Button } from "@/components/Button/Button";
+import {
+  Button,
+  ButtonLink,
+  Checkbox,
+  Header,
+  Input,
+  Password,
+} from "@/components";
 
 export const LoginScreen = () => {
   const {
@@ -34,11 +37,18 @@ export const LoginScreen = () => {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-      <View style={styles.wrapper}>
-        <View style={styles.wrapperCenter}>
-          <View style={styles.inputGroup}>
+      <View style={commonStyles.wrapper}>
+        <Header />
+        <View style={commonStyles.wrapperCenter}>
+          <View style={commonStyles.inputGroup}>
             <Controller
-              rules={{ required: "Required" }}
+              rules={{
+                required: { value: true, message: "Required" },
+                pattern: {
+                  value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+                  message: "Please enter correct email address",
+                },
+              }}
               name="login"
               control={control}
               render={({ field }) => (
@@ -48,7 +58,7 @@ export const LoginScreen = () => {
                   value={field.value}
                   inputMode="email"
                   keyboardType="email-address"
-                  isInvalid={!!errors.login}
+                  hasError={!!errors.login}
                   errorMessage={errors.login?.message}
                 />
               )}
@@ -59,14 +69,14 @@ export const LoginScreen = () => {
               rules={{ required: "Please enter password" }}
               render={({ field }) => (
                 <Password
-                  isInvalid={!!errors.password}
+                  hasError={!!errors.password}
                   value={field.value}
                   errorMessage={errors.password?.message}
                   onChangeText={field.onChange}
                 />
               )}
             />
-            <View style={loginStyles.checkboxWrapper}>
+            <View style={styles.checkboxWrapper}>
               <Controller
                 name="isRememberMe"
                 control={control}
@@ -76,19 +86,19 @@ export const LoginScreen = () => {
               />
               <Link suppressHighlighting asChild href={Routes.index}>
                 <TouchableOpacity>
-                  <Text style={loginStyles.text}>Forgot password</Text>
+                  <Text style={styles.text}>Forgot password</Text>
                 </TouchableOpacity>
               </Link>
             </View>
           </View>
           <Button
             onPress={handleSubmit(onSubmit)}
-            title="Sign In"
+            text="Sign In"
             variant="primary"
           />
         </View>
         <View>
-          <Text style={styles.signInText}>
+          <Text style={commonStyles.signInText}>
             If you don't have an account yet?
           </Text>
           <ButtonLink

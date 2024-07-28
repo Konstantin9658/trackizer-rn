@@ -4,6 +4,9 @@ import { Dimensions, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   wrapper: {
+    marginTop: 8,
+  },
+  indicators: {
     width: "100%",
     marginTop: 24,
     flexDirection: "row",

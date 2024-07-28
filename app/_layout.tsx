@@ -1,7 +1,5 @@
-import TrackizerLogo from "@/components/Logo/Logo";
 import { Colors } from "@/constants/Colors";
 import { stylesContainer } from "@/styles/container";
-import { stylesLogo } from "@/styles/logo";
 import { stylesMain } from "@/styles/main";
 import { useFonts } from "expo-font";
 import { Stack, SplashScreen } from "expo-router";
@@ -37,9 +35,6 @@ export default function RootLayout() {
       <StatusBar style="light" />
       <View style={stylesMain.main} onLayout={onLayoutRootView}>
         <View style={stylesContainer.container}>
-          <View style={stylesLogo.logo}>
-            <TrackizerLogo />
-          </View>
           <Stack
             screenOptions={{
               contentStyle: {

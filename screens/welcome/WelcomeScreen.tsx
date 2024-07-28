@@ -1,7 +1,7 @@
 import { View, Text, Image } from "react-native";
-import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
 import { Routes } from "@/constants/Routes";
 import { styles } from "./styles";
+import { TrackizerLogo, ButtonLink } from "@/components";
 
 export const WelcomeScreen = () => {
   const sourceDecorLeft = require("../../assets/images/Welcome/welcome-decor-left.png");
@@ -11,6 +11,7 @@ export const WelcomeScreen = () => {
 
   return (
     <>
+      <TrackizerLogo width={178} height={29} />
       <Image style={styles.decor_left} source={sourceDecorLeft} />
       <Image
         style={styles.decor_right}

@@ -37,11 +37,5 @@ export const Checkbox = ({ label, ...props }: CheckboxProps) => {
         </Text>
       )}
     </View>
-    // <View style={styles.wrapper}>
-
-    //   <Link asChild href={Routes.index}>
-    //     <Text style={styles.text}>Forgot password</Text>
-    //   </Link>
-    // </View>
   );
 };

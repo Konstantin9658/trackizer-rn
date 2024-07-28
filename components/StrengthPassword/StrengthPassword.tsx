@@ -12,8 +12,8 @@ export const StrengthPassword = ({ password }: StrengthPasswordProps) => {
     .join("") as PassLevelType;
 
   return (
-    <View>
-      <View style={styles.wrapper}>
+    <View style={styles.wrapper}>
+      <View style={styles.indicators}>
         <View
           style={[
             styles.indicator,

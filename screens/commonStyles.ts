@@ -3,8 +3,9 @@ import { Gaps } from "@/constants/Gaps";
 import { FontSize, LineHeight } from "@/constants/Typography";
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const commonStyles = StyleSheet.create({
   wrapper: {
+    position: "relative",
     paddingHorizontal: 26,
     height: "100%",
   },

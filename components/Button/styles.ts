@@ -7,8 +7,12 @@ export const styles = StyleSheet.create({
     height: 48,
     alignItems: "center",
     justifyContent: "center",
+    flexDirection: "row",
     borderRadius: 30,
     borderWidth: 1,
+  },
+  button_pressed: {
+    opacity: 0.4,
   },
   button_dark: {
     backgroundColor: Colors.black,
