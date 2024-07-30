@@ -2,7 +2,8 @@ import { View, Text } from "react-native";
 import { commonStyles } from "../commonStyles";
 import { Routes } from "@/constants/Routes";
 import { styles } from "./styles";
-import { ButtonLink, Header } from "@/components";
+import { Header } from "@/components/Header/Header";
+import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
 
 export const QuickStartScreen = () => {
   return (

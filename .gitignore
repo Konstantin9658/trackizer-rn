@@ -1,6 +1,5 @@
 node_modules/
 .expo/
-.husky/
 dist/
 npm-debug.*
 *.jks

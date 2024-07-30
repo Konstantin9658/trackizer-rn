@@ -17,8 +17,8 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.accent_primary.accent_p_100,
   },
   link_secondary: {
-    borderColor: BorderColor.black_10,
-    backgroundColor: Colors.light_dark,
+    borderColor: Colors.black_10,
+    backgroundColor: Colors.black_10,
   },
   text: {
     color: Colors.white,

@@ -8,12 +8,14 @@ export const Input = ({
   label,
   hasError = false,
   errorMessage,
-  isCenteredLabel = false,
+  variant = "left",
   ...props
 }: InputProps) => {
   return (
     <View>
-      <Text style={[styles.label, isCenteredLabel && styles.label_centered]}>
+      <Text
+        style={[styles.label, variant === "center" && styles.label_centered]}
+      >
         {label}
       </Text>
       <TextInput

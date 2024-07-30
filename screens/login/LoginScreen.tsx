@@ -11,14 +11,12 @@ import { styles } from "./styles";
 import { Link } from "expo-router";
 import { Controller, useForm } from "react-hook-form";
 import { LoginFormData } from "./types";
-import {
-  Button,
-  ButtonLink,
-  Checkbox,
-  Header,
-  Input,
-  Password,
-} from "@/components";
+import { Header } from "@/components/Header/Header";
+import { Input } from "@/components/Input/Input";
+import { Password } from "@/components/Password/Password";
+import { Checkbox } from "@/components/Checkbox/Checkbox";
+import { Button } from "@/components/Button/Button";
+import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
 
 export const LoginScreen = () => {
   const {

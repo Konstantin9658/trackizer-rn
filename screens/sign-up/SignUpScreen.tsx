@@ -3,15 +3,13 @@ import { View, Text, TouchableWithoutFeedback, Keyboard } from "react-native";
 import { Routes } from "@/constants/Routes";
 import { Controller, useForm } from "react-hook-form";
 import { SignUpFormData } from "./types";
-import {
-  Input,
-  Password,
-  StrengthPassword,
-  Button,
-  ButtonLink,
-  Header,
-} from "@/components";
 import { router } from "expo-router";
+import { Header } from "@/components/Header/Header";
+import { Input } from "@/components/Input/Input";
+import { Password } from "@/components/Password/Password";
+import { StrengthPassword } from "@/components/StrengthPassword/StrengthPassword";
+import { Button } from "@/components/Button/Button";
+import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
 
 export const SignUpScreen = () => {
   const {

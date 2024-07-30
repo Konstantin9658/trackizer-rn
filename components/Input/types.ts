@@ -4,5 +4,5 @@ export interface InputProps extends TextInputProps {
   label: string;
   hasError?: boolean;
   errorMessage?: string;
-  isCenteredLabel?: boolean;
+  variant?: "left" | "center";
 }

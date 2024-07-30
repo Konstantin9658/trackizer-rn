@@ -10,24 +10,22 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     borderRadius: 30,
     borderWidth: 1,
+    overflow: "hidden",
+    position: "relative",
   },
   button_pressed: {
     opacity: 0.4,
   },
-  button_dark: {
-    backgroundColor: Colors.black,
+  gradient: {
+    position: "absolute",
   },
-  button_blue: {
-    backgroundColor: Colors.blue,
-    borderColor: BorderColor.blue,
+  button_secondary: {
+    backgroundColor: Colors.black,
+    borderColor: Colors.black_10,
   },
   button_primary: {
     borderColor: BorderColor.accent,
     backgroundColor: Colors.accent_primary.accent_p_100,
-  },
-  button_light: {
-    backgroundColor: Colors.white,
-    color: Colors.white,
   },
   text: {
     color: Colors.white,
