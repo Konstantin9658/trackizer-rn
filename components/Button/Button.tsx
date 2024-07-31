@@ -1,12 +1,8 @@
 import { Pressable, Text } from "react-native";
 import { CustomButtonProps } from "./types";
 import { styles } from "./styles";
-import { RadialGradient } from "../RadialGradient/RadialGradient";
-
-const colorList = [
-  { offset: "0.4325", color: "rgba(255, 255, 255, 0)", opacity: "0" },
-  { offset: "1", color: "rgba(255, 127, 55, 0.5)", opacity: "1" },
-];
+import { PrimaryRadialGradient } from "./PrimaryRadialGradient";
+import { SecondaryLinearGradient } from "./SecondaryLinearGradient";
 
 export const Button = (props: CustomButtonProps) => {
   const { variant, children, text, ...otherProps } = props;
@@ -22,14 +18,12 @@ export const Button = (props: CustomButtonProps) => {
       ]}
       {...otherProps}
     >
-      <RadialGradient
-        style={styles.gradient}
-        colorList={colorList}
-        x="50%"
-        y="100%"
-        rx="100%"
-        ry="100%"
-      />
+      {variant === "primary" && (
+        <PrimaryRadialGradient style={styles.gradient} height={48} />
+      )}
+      {variant === "secondary" && (
+        <SecondaryLinearGradient style={styles.gradient} height={48} />
+      )}
       {content}
     </Pressable>
   );

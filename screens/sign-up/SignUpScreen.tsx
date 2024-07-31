@@ -9,7 +9,7 @@ import { Input } from "@/components/Input/Input";
 import { Password } from "@/components/Password/Password";
 import { StrengthPassword } from "@/components/StrengthPassword/StrengthPassword";
 import { Button } from "@/components/Button/Button";
-import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
+import { handleNavigate } from "@/utils/common";
 
 export const SignUpScreen = () => {
   const {
@@ -87,7 +87,11 @@ export const SignUpScreen = () => {
           <Text style={commonStyles.signInText}>
             Do you have already an account?
           </Text>
-          <ButtonLink route={Routes.login} text="Sign In" variant="secondary" />
+          <Button
+            onPress={handleNavigate(Routes.login)}
+            text="Sign In"
+            variant="secondary"
+          />
         </View>
       </View>
     </TouchableWithoutFeedback>

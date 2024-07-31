@@ -3,15 +3,16 @@ import { commonStyles } from "../commonStyles";
 import { Routes } from "@/constants/Routes";
 import { styles } from "./styles";
 import { Header } from "@/components/Header/Header";
-import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
+import { Button } from "@/components/Button/Button";
+import { handleNavigate } from "@/utils/common";
 
 export const QuickStartScreen = () => {
   return (
     <View style={commonStyles.wrapper}>
       <Header />
       <View style={styles.dummyWrapper}>
-        <ButtonLink
-          route={Routes.signUp}
+        <Button
+          onPress={handleNavigate(Routes.signUp)}
           variant="secondary"
           text="Sign up with E-mail"
         />

@@ -2,7 +2,8 @@ import { View, Text, Image } from "react-native";
 import { Routes } from "@/constants/Routes";
 import { styles } from "./styles";
 import { TrackizerLogo } from "@/components/Logo/Logo";
-import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
+import { Button } from "@/components/Button/Button";
+import { handleNavigate } from "@/utils/common";
 
 export const WelcomeScreen = () => {
   const sourceDecorLeft = require("../../assets/images/Welcome/welcome-decor-left.png");
@@ -30,13 +31,13 @@ export const WelcomeScreen = () => {
         risus.
       </Text>
       <View style={styles.group_button}>
-        <ButtonLink
-          route={Routes.quickStart}
+        <Button
+          onPress={handleNavigate(Routes.quickStart)}
           variant="primary"
           text="Get started"
         />
-        <ButtonLink
-          route={Routes.login}
+        <Button
+          onPress={handleNavigate(Routes.login)}
           variant="secondary"
           text="I have an account"
         />

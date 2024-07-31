@@ -1,4 +1,4 @@
-import { BorderColor, Colors } from "@/constants/Colors";
+import { Colors } from "@/constants/Colors";
 import { FontSize, LineHeight } from "@/constants/Typography";
 import { StyleSheet } from "react-native";
 
@@ -10,22 +10,29 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     borderRadius: 30,
     borderWidth: 1,
-    overflow: "hidden",
+    borderColor: Colors.transparent,
     position: "relative",
   },
   button_pressed: {
     opacity: 0.4,
+    shadowOpacity: 0,
   },
   gradient: {
     position: "absolute",
   },
   button_secondary: {
-    backgroundColor: Colors.black,
-    borderColor: Colors.black_10,
+    backgroundColor: Colors.light_dark,
+    borderColor: Colors.transparent,
   },
   button_primary: {
-    borderColor: BorderColor.accent,
     backgroundColor: Colors.accent_primary.accent_p_100,
+    shadowColor: Colors.accent_primary.accent_p_100,
+    shadowRadius: 15,
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
+    shadowOpacity: 0.5,
   },
   text: {
     color: Colors.white,

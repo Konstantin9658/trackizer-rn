@@ -1,11 +1,16 @@
-import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
+import { Button } from "@/components/Button/Button";
 import { Routes } from "@/constants/Routes";
+import { handleNavigate } from "@/utils/common";
 import { View } from "react-native";
 
 export const HomeScreen = () => {
   return (
     <View>
-      <ButtonLink text="Go back" variant="secondary" route={Routes.index} />
+      <Button
+        text="Go back"
+        variant="secondary"
+        onPress={handleNavigate(Routes.index)}
+      />
     </View>
   );
 };

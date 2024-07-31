@@ -16,7 +16,7 @@ import { Input } from "@/components/Input/Input";
 import { Password } from "@/components/Password/Password";
 import { Checkbox } from "@/components/Checkbox/Checkbox";
 import { Button } from "@/components/Button/Button";
-import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
+import { handleNavigate } from "@/utils/common";
 
 export const LoginScreen = () => {
   const {
@@ -99,8 +99,8 @@ export const LoginScreen = () => {
           <Text style={commonStyles.signInText}>
             If you don't have an account yet?
           </Text>
-          <ButtonLink
-            route={Routes.quickStart}
+          <Button
+            onPress={handleNavigate(Routes.quickStart)}
             text="Sign Up"
             variant="secondary"
           />
