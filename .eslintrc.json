@@ -4,9 +4,17 @@
 		"react",
 		"react-native"
 	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": 2019,
+		"sourceType": "module",
+		"project": ["tsconfig.json"]
+	},
+	"ignorePatterns": ["babel.config.js"],
 	"extends": [
 		"eslint:recommended",
-		"plugin:@typescript-eslint/recommended"
+		"plugin:@typescript-eslint/recommended",
+		"plugin:etc/recommended"
 	],
 	"rules": {
 		"react-native/no-unused-styles": 2,
@@ -16,6 +24,7 @@
 		"react-native/no-raw-text": 2,
 		"react-native/no-single-element-style-arrays": 2,
 		"react-hooks/exhaustive-deps": "off",
+		"etc/no-commented-out-code": 2,
 		"prettier/prettier": [
 			"error",
 			{
