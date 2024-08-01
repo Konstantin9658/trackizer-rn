@@ -4,19 +4,10 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   wrapper: {
-    marginTop: 24,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  checkboxWrapper: {
     flexDirection: "row",
     alignItems: "center",
   },
-  textLabel: {
-    marginLeft: 8,
-  },
-  text: {
+  label: {
     textDecorationLine: "none",
     display: "flex",
     fontFamily: "Inter-400",
@@ -25,8 +16,8 @@ export const styles = StyleSheet.create({
     lineHeight: LineHeight.lh20,
     letterSpacing: 0.2,
     color: Colors.grayscale.gray_50,
+    marginLeft: 8,
   },
-  textContainer: {},
   icon: {
     borderRadius: 10,
   },

@@ -3,8 +3,9 @@ import { Gaps } from "@/constants/Gaps";
 import { FontSize, LineHeight } from "@/constants/Typography";
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const commonStyles = StyleSheet.create({
   wrapper: {
+    position: "relative",
     paddingHorizontal: 26,
     height: "100%",
   },
@@ -12,7 +13,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
   },
-  button_group: {
+  buttonGroup: {
     marginTop: "auto",
     gap: Gaps.g16,
   },
@@ -32,11 +33,9 @@ export const styles = StyleSheet.create({
     lineHeight: LineHeight.lh16,
     letterSpacing: 0.2,
     paddingHorizontal: 20,
+    marginTop: 24,
   },
-  button_email: {
-    marginBottom: 24,
-  },
-  input_group: {
+  inputGroup: {
     gap: Gaps.g16,
     marginBottom: 40,
   },

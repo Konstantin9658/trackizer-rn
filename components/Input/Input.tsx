@@ -1,34 +1,30 @@
 import { TextInput, Text, View } from "react-native";
 import { styles } from "./styles";
-import { InputProps } from "./Input.types";
-import { useState } from "react";
-import { StrengthPassword } from "../StrengthPassword/StrengthPassword";
-import { Checkbox } from "../Checkbox/Checkbox";
+import { InputProps } from "./types";
+import { HelperText } from "../HelperText/HelperText";
+import { Colors } from "@/constants/Colors";
 
 export const Input = ({
   label,
-  isPassword = false,
-  isCenteredLabel = false,
-  isLogin = false,
-  isRegister = false,
+  hasError = false,
+  errorMessage,
+  variant = "left",
   ...props
 }: InputProps) => {
-  const [, setText] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
   return (
     <View>
-      <Text style={[styles.label, isCenteredLabel && styles.labelCentered]}>
+      <Text
+        style={[styles.label, variant === "center" && styles.label_centered]}
+      >
         {label}
       </Text>
       <TextInput
         autoCapitalize="none"
-        secureTextEntry={isPassword}
-        onChangeText={isPassword ? setPassword : setText}
-        style={styles.input}
+        selectionColor={Colors.white}
+        style={[styles.input, hasError && styles.input_error]}
         {...props}
       />
-      {isRegister && <StrengthPassword password={password} />}
-      {isLogin && <Checkbox />}
+      {hasError && <HelperText text={errorMessage} type="error" />}
     </View>
   );
 };

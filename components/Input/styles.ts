@@ -9,10 +9,14 @@ export const styles = StyleSheet.create({
     height: 48,
     borderWidth: 1,
     borderColor: Colors.grayscale.gray_70,
+    position: "relative",
     color: Colors.white,
     fontSize: FontSize.fs16,
     lineHeight: LineHeight.lh20,
     paddingHorizontal: 20,
+  },
+  input_error: {
+    borderColor: Colors.red,
   },
   label: {
     fontFamily: "Inter-500",
@@ -21,7 +25,7 @@ export const styles = StyleSheet.create({
     color: Colors.grayscale.gray_50,
     marginBottom: 4,
   },
-  labelCentered: {
+  label_centered: {
     textAlign: "center",
   },
 });

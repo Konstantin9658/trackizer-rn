@@ -1,49 +1,11 @@
-import { Colors } from "@/constants/Colors";
-import { View, Text, StyleSheet, Image } from "react-native";
-import { FontSize, LineHeight } from "@/constants/Typography";
-import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
+import { View, Text, Image } from "react-native";
 import { Routes } from "@/constants/Routes";
-import { Gaps } from "@/constants/Gaps";
+import { styles } from "./styles";
+import { TrackizerLogo } from "@/components/Logo/Logo";
+import { Button } from "@/components/Button/Button";
+import { navigateTo } from "@/utils/common";
 
-const styles = StyleSheet.create({
-  text: {
-    color: Colors.white,
-    textAlign: "center",
-    fontFamily: "Inter-400",
-    fontSize: FontSize.fs14,
-    lineHeight: LineHeight.lh20,
-    letterSpacing: 0.2,
-    paddingHorizontal: 27,
-  },
-  image: {
-    margin: "auto",
-    position: "relative",
-  },
-  decor_left: {
-    position: "absolute",
-    top: 60,
-    left: 0,
-  },
-  decor_right: {
-    position: "absolute",
-    right: 0,
-    top: 336,
-  },
-  decor_highlight: {
-    position: "absolute",
-    top: 203,
-    right: 0,
-    zIndex: -1,
-  },
-  group_button: {
-    marginTop: 40,
-    gap: Gaps.g16,
-    width: "100%",
-    paddingHorizontal: 26,
-  },
-});
-
-export const Welcome = () => {
+export const WelcomeScreen = () => {
   const sourceDecorLeft = require("../../assets/images/Welcome/welcome-decor-left.png");
   const sourceDecorRight = require("../../assets/images/Welcome/welcome-decor-right.png");
   const sourceHighlight = require("../../assets/images/Welcome/welcome-highlight.png");
@@ -51,6 +13,7 @@ export const Welcome = () => {
 
   return (
     <>
+      <TrackizerLogo style={styles.logo} width={178} height={29} />
       <Image style={styles.decor_left} source={sourceDecorLeft} />
       <Image
         style={styles.decor_right}
@@ -68,13 +31,13 @@ export const Welcome = () => {
         risus.
       </Text>
       <View style={styles.group_button}>
-        <ButtonLink
-          route={Routes.register}
+        <Button
+          onPress={navigateTo(Routes.quickStart)}
           variant="primary"
           text="Get started"
         />
-        <ButtonLink
-          route={Routes.login}
+        <Button
+          onPress={navigateTo(Routes.login)}
           variant="secondary"
           text="I have an account"
         />

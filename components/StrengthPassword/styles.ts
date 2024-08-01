@@ -4,6 +4,9 @@ import { Dimensions, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   wrapper: {
+    marginTop: 8,
+  },
+  indicators: {
     width: "100%",
     marginTop: 24,
     flexDirection: "row",
@@ -18,13 +21,16 @@ export const styles = StyleSheet.create({
   indicator_tooweak: {
     backgroundColor: Colors.red,
   },
-  indicator_weak: {
+  tooweak: {
+    backgroundColor: Colors.red,
+  },
+  weak: {
     backgroundColor: Colors.yellow,
   },
-  indicator_medium: {
+  medium: {
     backgroundColor: Colors.yellow,
   },
-  indicator_strong: {
+  strong: {
     backgroundColor: Colors.green,
   },
   indicatorFirst: {
