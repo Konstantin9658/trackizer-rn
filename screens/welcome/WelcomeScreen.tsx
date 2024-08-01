@@ -3,7 +3,7 @@ import { Routes } from "@/constants/Routes";
 import { styles } from "./styles";
 import { TrackizerLogo } from "@/components/Logo/Logo";
 import { Button } from "@/components/Button/Button";
-import { handleNavigate } from "@/utils/common";
+import { navigateTo } from "@/utils/common";
 
 export const WelcomeScreen = () => {
   const sourceDecorLeft = require("../../assets/images/Welcome/welcome-decor-left.png");
@@ -32,12 +32,12 @@ export const WelcomeScreen = () => {
       </Text>
       <View style={styles.group_button}>
         <Button
-          onPress={handleNavigate(Routes.quickStart)}
+          onPress={navigateTo(Routes.quickStart)}
           variant="primary"
           text="Get started"
         />
         <Button
-          onPress={handleNavigate(Routes.login)}
+          onPress={navigateTo(Routes.login)}
           variant="secondary"
           text="I have an account"
         />

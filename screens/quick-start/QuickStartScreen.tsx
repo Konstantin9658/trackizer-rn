@@ -4,7 +4,7 @@ import { Routes } from "@/constants/Routes";
 import { styles } from "./styles";
 import { Header } from "@/components/Header/Header";
 import { Button } from "@/components/Button/Button";
-import { handleNavigate } from "@/utils/common";
+import { navigateTo } from "@/utils/common";
 
 export const QuickStartScreen = () => {
   return (
@@ -12,7 +12,7 @@ export const QuickStartScreen = () => {
       <Header />
       <View style={styles.dummyWrapper}>
         <Button
-          onPress={handleNavigate(Routes.signUp)}
+          onPress={navigateTo(Routes.signUp)}
           variant="secondary"
           text="Sign up with E-mail"
         />

@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     borderRadius: 30,
     borderWidth: 1,
-    borderColor: Colors.transparent,
     position: "relative",
   },
   button_pressed: {
@@ -19,12 +18,18 @@ export const styles = StyleSheet.create({
   },
   gradient: {
     position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 48,
+    borderRadius: 30,
   },
   button_secondary: {
     backgroundColor: Colors.light_dark,
-    borderColor: Colors.transparent,
+    borderColor: Colors.white_10,
   },
   button_primary: {
+    borderColor: Colors.white_20,
     backgroundColor: Colors.accent_primary.accent_p_100,
     shadowColor: Colors.accent_primary.accent_p_100,
     shadowRadius: 15,

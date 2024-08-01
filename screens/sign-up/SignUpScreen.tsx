@@ -9,7 +9,7 @@ import { Input } from "@/components/Input/Input";
 import { Password } from "@/components/Password/Password";
 import { StrengthPassword } from "@/components/StrengthPassword/StrengthPassword";
 import { Button } from "@/components/Button/Button";
-import { handleNavigate } from "@/utils/common";
+import { navigateTo } from "@/utils/common";
 
 export const SignUpScreen = () => {
   const {
@@ -88,7 +88,7 @@ export const SignUpScreen = () => {
             Do you have already an account?
           </Text>
           <Button
-            onPress={handleNavigate(Routes.login)}
+            onPress={navigateTo(Routes.login)}
             text="Sign In"
             variant="secondary"
           />

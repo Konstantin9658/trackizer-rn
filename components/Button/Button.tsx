@@ -1,11 +1,11 @@
 import { Pressable, Text } from "react-native";
 import { CustomButtonProps } from "./types";
 import { styles } from "./styles";
-import { PrimaryRadialGradient } from "./PrimaryRadialGradient";
-import { SecondaryLinearGradient } from "./SecondaryLinearGradient";
+import { LinearGradient } from "expo-linear-gradient";
+import { Colors } from "@/constants/Colors";
 
 export const Button = (props: CustomButtonProps) => {
-  const { variant, children, text, ...otherProps } = props;
+  const { variant, children, text, ...rest } = props;
   const content = children || <Text style={styles.text}>{text}</Text>;
 
   return (
@@ -16,14 +16,14 @@ export const Button = (props: CustomButtonProps) => {
         variant === "primary" && styles.button_primary,
         variant === "secondary" && styles.button_secondary,
       ]}
-      {...otherProps}
+      {...rest}
     >
-      {variant === "primary" && (
-        <PrimaryRadialGradient style={styles.gradient} height={48} />
-      )}
-      {variant === "secondary" && (
-        <SecondaryLinearGradient style={styles.gradient} height={48} />
-      )}
+      <LinearGradient
+        style={styles.gradient}
+        colors={[`${Colors.white_20}`, `${Colors.transparent}`]}
+        locations={[0.1, 0.9]}
+        dither
+      />
       {content}
     </Pressable>
   );
