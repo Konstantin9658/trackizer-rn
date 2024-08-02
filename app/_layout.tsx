@@ -5,17 +5,12 @@ import { useFonts } from "expo-font";
 import { Stack, SplashScreen } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useCallback } from "react";
-import { View } from "react-native";
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from "react-native-safe-area-context";
+import { Platform, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const insets = useSafeAreaInsets();
-
   const [fontsLoaded, fontError] = useFonts({
     "Inter-400": require("../assets/fonts/Inter-Regular.ttf"),
     "Inter-500": require("../assets/fonts/Inter-Medium.ttf"),
@@ -28,19 +23,24 @@ export default function RootLayout() {
     }
   }, [fontsLoaded, fontError]);
 
+  const paddingTop = Platform.OS === "android" ? 40 : 20;
+
   if (!fontsLoaded) return null;
 
   return (
-    <SafeAreaProvider>
+    <SafeAreaView>
       <StatusBar style="light" />
       <View style={stylesMain.main} onLayout={onLayoutRootView}>
-        <View style={stylesContainer.container}>
+        <View
+          style={{
+            ...stylesContainer.container,
+            paddingTop,
+          }}
+        >
           <Stack
             screenOptions={{
               contentStyle: {
                 backgroundColor: Colors.grayscale.gray_80,
-                paddingTop: insets.top,
-                paddingBottom: insets.bottom,
               },
               headerShown: false,
             }}
@@ -49,6 +49,6 @@ export default function RootLayout() {
           </Stack>
         </View>
       </View>
-    </SafeAreaProvider>
+    </SafeAreaView>
   );
 }

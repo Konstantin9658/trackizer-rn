@@ -13,7 +13,7 @@ export const WelcomeScreen = () => {
 
   return (
     <>
-      <TrackizerLogo style={styles.logo} width={178} height={29} />
+      <TrackizerLogo width={178} height={29} />
       <Image style={styles.decor_left} source={sourceDecorLeft} />
       <Image
         style={styles.decor_right}

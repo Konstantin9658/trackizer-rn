@@ -13,9 +13,6 @@ export const styles = StyleSheet.create({
     letterSpacing: 0.2,
     paddingHorizontal: 27,
   },
-  logo: {
-    marginTop: 20,
-  },
   image: {
     margin: "auto",
     position: "relative",
