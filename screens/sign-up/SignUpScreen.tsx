@@ -4,7 +4,6 @@ import { Routes } from "@/constants/Routes";
 import { Controller, useForm } from "react-hook-form";
 import { SignUpFormData } from "./types";
 import { router } from "expo-router";
-import { Header } from "@/components/Header/Header";
 import { Input } from "@/components/Input/Input";
 import { Password } from "@/components/Password/Password";
 import { StrengthPassword } from "@/components/StrengthPassword/StrengthPassword";
@@ -31,7 +30,6 @@ export const SignUpScreen = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <View style={commonStyles.wrapper}>
-        <Header />
         <View style={commonStyles.wrapperCenter}>
           <View style={commonStyles.inputGroup}>
             <Controller

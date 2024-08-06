@@ -12,6 +12,10 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     position: "relative",
   },
+  button_small: {
+    width: 120,
+    height: 32,
+  },
   button_pressed: {
     opacity: 0.4,
     shadowOpacity: 0,
@@ -21,11 +25,11 @@ export const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: 48,
+    height: "100%",
     borderRadius: 30,
   },
   button_secondary: {
-    backgroundColor: Colors.light_dark,
+    backgroundColor: Colors.white_10,
     borderColor: Colors.white_10,
   },
   button_primary: {
@@ -45,6 +49,10 @@ export const styles = StyleSheet.create({
     fontSize: FontSize.fs14,
     lineHeight: LineHeight.lh20,
     letterSpacing: 0.2,
+  },
+  text_small: {
+    fontSize: FontSize.fs12,
+    lineHeight: LineHeight.lh16,
   },
   text_dark: {
     color: Colors.black,

@@ -1,7 +1,8 @@
 export const Routes = {
-  index: "/",
-  quickStart: "/quick-start",
-  signUp: "/sign-up",
-  login: "/login",
+  welcome: "/",
+  quickStart: "/auth",
+  signUp: "/auth/sign-up",
+  login: "/auth/login",
   home: "/home",
+  settings: "/settings",
 };

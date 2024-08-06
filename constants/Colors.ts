@@ -2,6 +2,8 @@ export const Colors = {
   transparent: "transparent",
   white: "#FFFFFF",
   black: "#000000",
+  light_gray: "rgba(207, 207, 252, 0.15)",
+  gray_20: "rgba(78, 78, 97, 0.2)",
   white_10: "rgba(255, 255, 255, 0.1)",
   white_15: "rgba(255, 255, 255, 0.15)",
   white_20: "rgba(255, 255, 255, 0.2)",
