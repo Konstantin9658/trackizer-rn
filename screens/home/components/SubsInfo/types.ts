@@ -1,4 +1,8 @@
-export type SubsType = "active" | "highest" | "lowest";
+export enum SubsType {
+  Active = "active",
+  Highest = "highest",
+  Lowest = "lowest",
+}
 
 export interface SubsInfoProps {
   value: number;

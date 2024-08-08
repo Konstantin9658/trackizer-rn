@@ -4,17 +4,17 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   button: {
-    height: 48,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
     borderRadius: 30,
     borderWidth: 1,
     position: "relative",
+    paddingVertical: 14,
   },
   button_small: {
-    width: 120,
-    height: 32,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
   },
   button_pressed: {
     opacity: 0.4,
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: "100%",
+    bottom: 0,
     borderRadius: 30,
   },
   button_secondary: {

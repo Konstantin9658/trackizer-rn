@@ -16,10 +16,9 @@ export const Button = (props: CustomButtonProps) => {
     <Pressable
       style={({ pressed }) => [
         styles.button,
+        styles[`button_${variant}`],
         pressed && styles.button_pressed,
         size === "small" && styles.button_small,
-        variant === "primary" && styles.button_primary,
-        variant === "secondary" && styles.button_secondary,
       ]}
       {...rest}
     >

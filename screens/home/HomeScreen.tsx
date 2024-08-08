@@ -6,6 +6,7 @@ import { TrackizerLogo } from "@/components/Logo/Logo";
 import { Button } from "@/components/Button/Button";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { SubsInfo } from "./components/SubsInfo/SubsInfo";
+import { SubsType } from "./components/SubsInfo/types";
 
 export const HomeScreen = () => {
   return (
@@ -39,9 +40,9 @@ export const HomeScreen = () => {
           )}
         </AnimatedCircularProgress>
         <View style={styles.subs}>
-          <SubsInfo type="active" value={12} />
-          <SubsInfo type="highest" value={19.99} />
-          <SubsInfo type="lowest" value={5.99} />
+          <SubsInfo type={SubsType.Active} value={12} />
+          <SubsInfo type={SubsType.Highest} value={19.99} />
+          <SubsInfo type={SubsType.Lowest} value={5.99} />
         </View>
       </SafeAreaView>
     </View>
