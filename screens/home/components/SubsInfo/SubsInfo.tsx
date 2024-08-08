@@ -8,7 +8,10 @@ export const SubsInfo = (props: SubsInfoProps) => {
     <View style={styles.container}>
       <View style={[styles.decor, styles[`decor_${type}`]]} />
       <Text style={styles.text}>{SubsInfoTitle[type]}</Text>
-      <Text style={styles.count}>{value}</Text>
+      <Text style={styles.count}>
+        {type !== "active" && "$"}
+        {Math.round(value)}
+      </Text>
     </View>
   );
 };

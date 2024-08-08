@@ -39,9 +39,9 @@ export const HomeScreen = () => {
           )}
         </AnimatedCircularProgress>
         <View style={styles.subs}>
-          <SubsInfo type="active" value="12" />
-          <SubsInfo type="highest" value="$19.99" />
-          <SubsInfo type="lowest" value="$5.99" />
+          <SubsInfo type="active" value={12} />
+          <SubsInfo type="highest" value={19.99} />
+          <SubsInfo type="lowest" value={5.99} />
         </View>
       </SafeAreaView>
     </View>

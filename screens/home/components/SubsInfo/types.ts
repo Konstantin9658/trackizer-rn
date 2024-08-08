@@ -1,7 +1,7 @@
 export type SubsType = "active" | "highest" | "lowest";
 
 export interface SubsInfoProps {
-  value: string;
+  value: number;
   type: SubsType;
 }
 

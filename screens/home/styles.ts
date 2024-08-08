@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     position: "relative",
     paddingTop: 20,
     paddingBottom: 24,
+    paddingHorizontal: 24,
     backgroundColor: Colors.grayscale.gray_70,
     borderBottomLeftRadius: 24,
     borderBottomRightRadius: 24,
@@ -40,10 +41,11 @@ export const styles = StyleSheet.create({
   },
   button: {
     marginTop: "auto",
-    marginBottom: 36,
+    marginBottom: 30,
   },
   subs: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "center",
+    gap: 8,
   },
 });
