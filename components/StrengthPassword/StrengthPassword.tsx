@@ -17,7 +17,7 @@ export const StrengthPassword = ({ password }: StrengthPasswordProps) => {
         <View
           style={[
             styles.indicator,
-            styles.indicatorFirst,
+            styles.indicator_first,
             password.length !== 0 && styles[pass],
           ]}
         />
@@ -26,7 +26,7 @@ export const StrengthPassword = ({ password }: StrengthPasswordProps) => {
         <View
           style={[
             styles.indicator,
-            styles.indicatorLast,
+            styles.indicator_last,
             passStrength === 3 && styles[pass],
           ]}
         />

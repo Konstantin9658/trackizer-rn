@@ -6,7 +6,11 @@ import { Routes } from "@/constants/Routes";
 
 export const ButtonSettings = (props: PressableProps) => {
   return (
-    <Pressable {...props} onPress={navigateTo(Routes.settings)}>
+    <Pressable
+      style={styles.button}
+      {...props}
+      onPress={navigateTo(Routes.settings)}
+    >
       {({ pressed }) => <IconSettings style={pressed && styles.pressed} />}
     </Pressable>
   );

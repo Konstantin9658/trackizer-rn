@@ -1,11 +1,12 @@
-import { View, Text, Image, Platform } from "react-native";
+import { View, Text, Image } from "react-native";
 import { Routes } from "@/constants/Routes";
 import { styles } from "./styles";
 import { TrackizerLogo } from "@/components/Logo/Logo";
 import { Button } from "@/components/Button/Button";
 import { navigateTo } from "@/utils/common";
 import { stylesContainer } from "@/styles/container";
-import { SafeAreaContainer } from "@/components/SafeAreaContainer/SafeAreaContainer";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { cameraOffset } from "@/constants/Utils";
 
 export const WelcomeScreen = () => {
   const sourceDecorLeft = require("../../assets/images/Welcome/welcome-decor-left.png");
@@ -13,10 +14,9 @@ export const WelcomeScreen = () => {
   const sourceHighlight = require("../../assets/images/Welcome/welcome-highlight.png");
   const sourceImage = require("../../assets/images/Welcome/welcome.png");
 
-  const paddingTop = Platform.OS === "android" ? 40 : 20;
   return (
-    <SafeAreaContainer style={styles.container}>
-      <View style={{ ...stylesContainer.container, paddingTop }}>
+    <SafeAreaView>
+      <View style={{ ...stylesContainer.container, paddingTop: cameraOffset }}>
         <TrackizerLogo width={178} height={29} />
         <Image style={styles.decor_left} source={sourceDecorLeft} />
         <Image
@@ -47,6 +47,6 @@ export const WelcomeScreen = () => {
           />
         </View>
       </View>
-    </SafeAreaContainer>
+    </SafeAreaView>
   );
 };

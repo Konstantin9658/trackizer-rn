@@ -2,40 +2,15 @@ import { Colors } from "@/constants/Colors";
 import { Text, View } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
 import { styles } from "./styles";
-import { ButtonSettings } from "@/components/ButtonSettings/ButtonSettings";
 import { TrackizerLogo } from "@/components/Logo/Logo";
 import { Button } from "@/components/Button/Button";
-import { SafeAreaContainer } from "@/components/SafeAreaContainer/SafeAreaContainer";
-
-interface SubsInfo {
-  title: string;
-  count: string | number;
-  decorColor: string;
-}
-
-const subsInfo: SubsInfo[] = [
-  {
-    title: "Active subs",
-    count: 12,
-    decorColor: Colors.accent_primary.accent_p_50,
-  },
-  {
-    title: "Highest subs",
-    count: "$19.99",
-    decorColor: Colors.primary.primary_100,
-  },
-  {
-    title: "Lowest subs",
-    count: "$5.99",
-    decorColor: Colors.accent_secondary.accent_s_50,
-  },
-];
+import { SafeAreaView } from "react-native-safe-area-context";
+import { SubsInfo } from "./components/SubsInfo/SubsInfo";
 
 export const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <SafeAreaContainer edges={["top"]}>
-        <ButtonSettings style={styles.settings} />
+      <SafeAreaView edges={["top"]}>
         <AnimatedCircularProgress
           size={286}
           width={10}
@@ -64,20 +39,11 @@ export const HomeScreen = () => {
           )}
         </AnimatedCircularProgress>
         <View style={styles.subs}>
-          {subsInfo.map(({ title, count, decorColor }, i) => (
-            <View style={styles.subsBox} key={`subs-${i}`}>
-              <View
-                style={{
-                  ...styles.subsBox_decor,
-                  backgroundColor: decorColor,
-                }}
-              />
-              <Text style={styles.text}>{title}</Text>
-              <Text style={styles.count}>{count}</Text>
-            </View>
-          ))}
+          <SubsInfo type="active" value="12" />
+          <SubsInfo type="highest" value="$19.99" />
+          <SubsInfo type="lowest" value="$5.99" />
         </View>
-      </SafeAreaContainer>
+      </SafeAreaView>
     </View>
   );
 };

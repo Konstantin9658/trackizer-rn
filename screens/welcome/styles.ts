@@ -4,9 +4,6 @@ import { FontSize, LineHeight } from "@/constants/Typography";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   text: {
     color: Colors.white,
     textAlign: "center",
