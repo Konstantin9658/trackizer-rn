@@ -18,9 +18,6 @@ export const styles = StyleSheet.create({
     width: Dimensions.get("screen").width / 5 + 5,
     height: 5,
   },
-  indicator_tooweak: {
-    backgroundColor: Colors.red,
-  },
   tooweak: {
     backgroundColor: Colors.red,
   },
@@ -33,11 +30,11 @@ export const styles = StyleSheet.create({
   strong: {
     backgroundColor: Colors.green,
   },
-  indicatorFirst: {
+  indicator_first: {
     borderTopLeftRadius: 9,
     borderBottomLeftRadius: 9,
   },
-  indicatorLast: {
+  indicator_last: {
     borderTopRightRadius: 9,
     borderBottomRightRadius: 9,
   },

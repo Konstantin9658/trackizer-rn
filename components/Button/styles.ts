@@ -4,13 +4,17 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   button: {
-    height: 48,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
     borderRadius: 30,
     borderWidth: 1,
     position: "relative",
+    paddingVertical: 14,
+  },
+  button_small: {
+    paddingHorizontal: 12,
+    paddingVertical: 8,
   },
   button_pressed: {
     opacity: 0.4,
@@ -21,11 +25,11 @@ export const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: 48,
+    bottom: 0,
     borderRadius: 30,
   },
   button_secondary: {
-    backgroundColor: Colors.light_dark,
+    backgroundColor: Colors.white_10,
     borderColor: Colors.white_10,
   },
   button_primary: {
@@ -45,6 +49,10 @@ export const styles = StyleSheet.create({
     fontSize: FontSize.fs14,
     lineHeight: LineHeight.lh20,
     letterSpacing: 0.2,
+  },
+  text_small: {
+    fontSize: FontSize.fs12,
+    lineHeight: LineHeight.lh16,
   },
   text_dark: {
     color: Colors.black,

@@ -8,10 +8,9 @@ import {
 import { Routes } from "@/constants/Routes";
 import { commonStyles } from "../commonStyles";
 import { styles } from "./styles";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { Controller, useForm } from "react-hook-form";
 import { LoginFormData } from "./types";
-import { Header } from "@/components/Header/Header";
 import { Input } from "@/components/Input/Input";
 import { Password } from "@/components/Password/Password";
 import { Checkbox } from "@/components/Checkbox/Checkbox";
@@ -31,12 +30,14 @@ export const LoginScreen = () => {
     },
   });
 
-  const onSubmit = (data: LoginFormData) => console.log(data);
+  const onSubmit = (data: LoginFormData) => {
+    console.log(data);
+    router.push(Routes.home);
+  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <View style={commonStyles.wrapper}>
-        <Header />
         <View style={commonStyles.wrapperCenter}>
           <View style={commonStyles.inputGroup}>
             <Controller
@@ -82,7 +83,7 @@ export const LoginScreen = () => {
                   <Checkbox onPress={field.onChange} label="Remember me" />
                 )}
               />
-              <Link suppressHighlighting asChild href={Routes.index}>
+              <Link suppressHighlighting asChild href={Routes.welcome}>
                 <TouchableOpacity>
                   <Text style={styles.text}>Forgot password</Text>
                 </TouchableOpacity>

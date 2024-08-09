@@ -1,12 +1,13 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  wrapper: {
-    position: "relative",
-  },
-  buttonBack: {
+  button: {
     position: "absolute",
-    zIndex: 1,
-    left: 26,
+    right: 23,
+    top: 60,
+    zIndex: 2,
+  },
+  pressed: {
+    opacity: 0.4,
   },
 });
