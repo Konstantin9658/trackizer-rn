@@ -48,4 +48,15 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 8,
   },
+  wrapper: {
+    paddingHorizontal: 24,
+    alignItems: "center",
+    flex: 1,
+  },
+  cards: {
+    width: "100%",
+    alignItems: "center",
+    marginVertical: 16,
+    gap: 8,
+  },
 });
