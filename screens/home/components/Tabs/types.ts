@@ -1,8 +1,8 @@
 import { PressableProps } from "react-native";
 
 export enum FilterValue {
-  Subscriptions,
-  Upcoming,
+  subs,
+  upcoming,
 }
 
 export enum TabTitle {

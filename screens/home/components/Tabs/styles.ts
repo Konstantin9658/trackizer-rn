@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
     marginTop: 21,
     borderRadius: 16,
     flexDirection: "row",
-    maxWidth: 328,
   },
   text: {
     color: Colors.grayscale.gray_30,
@@ -24,7 +23,6 @@ export const styles = StyleSheet.create({
   },
 
   tab: {
-    position: "relative",
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
@@ -32,6 +30,7 @@ export const styles = StyleSheet.create({
     height: 36,
     width: 155,
     borderWidth: 1,
+    borderColor: Colors.transparent,
   },
   tab_pressed: {
     opacity: 0.4,

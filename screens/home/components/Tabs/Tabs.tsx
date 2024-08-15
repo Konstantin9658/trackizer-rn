@@ -30,14 +30,14 @@ export const Tabs = () => {
   return (
     <View style={styles.container}>
       <Tab
-        isActive={filter === FilterValue.Subscriptions}
+        isActive={filter === FilterValue.subs}
         title={TabTitle.Subscriptions}
-        onPress={handlePressTab(FilterValue.Subscriptions)}
+        onPress={handlePressTab(FilterValue.subs)}
       />
       <Tab
-        isActive={filter === FilterValue.Upcoming}
+        isActive={filter === FilterValue.upcoming}
         title={TabTitle.Upcoming}
-        onPress={handlePressTab(FilterValue.Upcoming)}
+        onPress={handlePressTab(FilterValue.upcoming)}
       />
     </View>
   );

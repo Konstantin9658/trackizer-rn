@@ -4,7 +4,6 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   card: {
-    maxWidth: 328,
     width: "100%",
     borderWidth: 1,
     borderColor: Colors.grayscale.gray_70,
@@ -15,6 +14,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginBottom: 8,
   },
   service: {
     flexDirection: "row",

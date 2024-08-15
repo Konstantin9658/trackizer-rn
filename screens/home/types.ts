@@ -4,8 +4,5 @@ export interface ISubscriptions {
   image: ImageSourcePropType;
   name: string;
   bill: number;
-  writeOffDay?: {
-    month: string;
-    day: number;
-  };
+  writeOffDay: Date;
 }

@@ -5,6 +5,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     position: "relative",
+    flex: 1,
     paddingTop: 20,
     paddingBottom: 24,
     paddingHorizontal: 24,
@@ -50,13 +51,10 @@ export const styles = StyleSheet.create({
   },
   wrapper: {
     paddingHorizontal: 24,
-    alignItems: "center",
-    flex: 1,
+    marginBottom: 16,
   },
   cards: {
     width: "100%",
-    alignItems: "center",
-    marginVertical: 16,
-    gap: 8,
+    paddingHorizontal: 24,
   },
 });

@@ -4,24 +4,27 @@ import { ISubscriptions } from "../../types";
 import { FilterValue } from "../Tabs/types";
 import { useAtom } from "jotai";
 import { currentFilter } from "@/store/home";
+import { MONTHS } from "../../consts";
 
 export const SubsCard = ({ item }: { item: ISubscriptions }) => {
   const [activeFilter] = useAtom(currentFilter);
 
+  const { image, writeOffDay, name, bill } = item;
+
   return (
     <View style={styles.card}>
       <View style={styles.service}>
-        {activeFilter === FilterValue.Subscriptions ? (
-          <Image style={styles.image} source={item.image} />
+        {activeFilter === FilterValue.subs ? (
+          <Image style={styles.image} source={image} />
         ) : (
           <View style={[styles.image, styles.image_date]}>
-            <Text style={styles.date}>{item.writeOffDay?.month}</Text>
-            <Text style={styles.date_day}>{item.writeOffDay?.day}</Text>
+            <Text style={styles.date}>{MONTHS[writeOffDay.getMonth()]}</Text>
+            <Text style={styles.date_day}>{writeOffDay.getDate()}</Text>
           </View>
         )}
-        <Text style={styles.text}>{item.name}</Text>
+        <Text style={styles.text}>{name}</Text>
       </View>
-      <Text style={styles.text}>${item.bill}</Text>
+      <Text style={styles.text}>${bill}</Text>
     </View>
   );
 };
