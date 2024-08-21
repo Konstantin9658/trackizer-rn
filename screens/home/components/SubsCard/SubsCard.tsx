@@ -9,17 +9,21 @@ import { MONTHS } from "../../consts";
 export const SubsCard = ({ item }: { item: ISubscriptions }) => {
   const [activeFilter] = useAtom(currentFilter);
 
-  const { image, writeOffDay, name, bill } = item;
+  const { imgUrlThumbnail, writeOffDay, name, bill } = item;
+
+  const parseWriteOffDay = new Date(writeOffDay);
 
   return (
     <View style={styles.card}>
       <View style={styles.service}>
         {activeFilter === FilterValue.subs ? (
-          <Image style={styles.image} source={image} />
+          <Image style={styles.image} source={imgUrlThumbnail} />
         ) : (
           <View style={[styles.image, styles.image_date]}>
-            <Text style={styles.date}>{MONTHS[writeOffDay.getMonth()]}</Text>
-            <Text style={styles.date_day}>{writeOffDay.getDate()}</Text>
+            <Text style={styles.date}>
+              {MONTHS[parseWriteOffDay.getMonth()]}
+            </Text>
+            <Text style={styles.date_day}>{parseWriteOffDay.getDate()}</Text>
           </View>
         )}
         <Text style={styles.text}>{name}</Text>

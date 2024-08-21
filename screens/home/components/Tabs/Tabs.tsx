@@ -28,17 +28,19 @@ export const Tabs = () => {
     setFilter(activeTab);
   };
   return (
-    <View style={styles.container}>
-      <Tab
-        isActive={filter === FilterValue.subs}
-        title={TabTitle.Subscriptions}
-        onPress={handlePressTab(FilterValue.subs)}
-      />
-      <Tab
-        isActive={filter === FilterValue.upcoming}
-        title={TabTitle.Upcoming}
-        onPress={handlePressTab(FilterValue.upcoming)}
-      />
+    <View style={styles.wrapper}>
+      <View style={styles.container}>
+        <Tab
+          isActive={filter === FilterValue.subs}
+          title={TabTitle.Subscriptions}
+          onPress={handlePressTab(FilterValue.subs)}
+        />
+        <Tab
+          isActive={filter === FilterValue.upcoming}
+          title={TabTitle.Upcoming}
+          onPress={handlePressTab(FilterValue.upcoming)}
+        />
+      </View>
     </View>
   );
 };

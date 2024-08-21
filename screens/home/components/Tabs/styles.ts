@@ -40,4 +40,8 @@ export const styles = StyleSheet.create({
     borderColor: Colors.light_gray,
     backgroundColor: Colors.gray_20,
   },
+  wrapper: {
+    paddingHorizontal: 24,
+    marginBottom: 16,
+  },
 });
