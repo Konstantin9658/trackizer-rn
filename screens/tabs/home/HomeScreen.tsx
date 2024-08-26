@@ -8,7 +8,7 @@ import { HeaderComponent } from "./components/HeaderComponent/HeaderComponent";
 
 export const HomeScreen = () => {
   return (
-    <GestureHandlerRootView>
+    <GestureHandlerRootView style={styles.container}>
       <FlatList
         ListHeaderComponent={<HeaderComponent />}
         ListFooterComponent={<SafeAreaView edges={["bottom"]} />}
