@@ -1,10 +1,10 @@
-import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { TouchableOpacity } from "react-native";
 import { styles } from "./styles";
+import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 
-export const TabButtons = (props: Omit<BottomTabBarProps, "insets">) => {
-  const { state, descriptors, navigation, ...rest } = props;
-
+export const TabButtons = (props: BottomTabBarProps) => {
+  const { state, descriptors, navigation, insets, ...rest } = props;
+  console.log(insets);
   return state.routes.map((route, index) => {
     const { options } = descriptors[route.key];
     const isFocused = state.index === index;
@@ -41,6 +41,7 @@ export const TabButtons = (props: Omit<BottomTabBarProps, "insets">) => {
 
     return (
       <TouchableOpacity
+        hitSlop={10}
         accessibilityRole="button"
         accessibilityState={isFocused ? { selected: true } : {}}
         accessibilityLabel={options.tabBarAccessibilityLabel}

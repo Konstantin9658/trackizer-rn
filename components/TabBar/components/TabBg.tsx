@@ -9,7 +9,14 @@ import Svg, {
 } from "react-native-svg";
 
 export const TabBg = (props: SvgProps) => (
-  <Svg viewBox="0 0 329 55" width={329} height={55} fill="none" {...props}>
+  <Svg
+    width="100%"
+    height="100%"
+    fill="none"
+    viewBox="0 0 329 55"
+    preserveAspectRatio="xMidYMid meet"
+    {...props}
+  >
     <G filter="url(#a)">
       <Mask id="c" fill="#fff">
         <Path

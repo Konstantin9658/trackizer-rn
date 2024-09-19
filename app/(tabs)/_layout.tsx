@@ -5,31 +5,36 @@ import { IconCreditCards } from "@/assets/Icons/TabIcon/IconCredirCards";
 import { IconHome } from "@/assets/Icons/TabIcon/IconHome";
 import { ButtonSettings } from "@/components/ButtonSettings/ButtonSettings";
 import { TabBar } from "@/components/TabBar/TabBar";
-import {
-  BottomTabBarProps,
-  BottomTabNavigationOptions,
-} from "@react-navigation/bottom-tabs";
+import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
 import { Tabs } from "expo-router";
 import { StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const TABS_SCREEN_OPTIONS: BottomTabNavigationOptions = {
   headerShown: false,
   tabBarShowLabel: false,
+  tabBarStyle: {
+    backgroundColor: "red",
+  },
 };
 
-const renderCustomTabBar = (props: BottomTabBarProps) => <TabBar {...props} />;
-
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   offsetIcon: {
-    top: -5,
+    top: -15,
   },
 });
 
 export default function TabLayout() {
   return (
-    <>
+    <SafeAreaView edges={["bottom"]} style={styles.container}>
       <ButtonSettings />
-      <Tabs tabBar={renderCustomTabBar} screenOptions={TABS_SCREEN_OPTIONS}>
+      <Tabs
+        tabBar={(props) => <TabBar {...props} />}
+        screenOptions={TABS_SCREEN_OPTIONS}
+      >
         <Tabs.Screen
           name="index"
           options={{
@@ -68,6 +73,6 @@ export default function TabLayout() {
           }}
         />
       </Tabs>
-    </>
+    </SafeAreaView>
   );
 }
