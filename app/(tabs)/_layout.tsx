@@ -13,9 +13,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const TABS_SCREEN_OPTIONS: BottomTabNavigationOptions = {
   headerShown: false,
   tabBarShowLabel: false,
-  tabBarStyle: {
-    backgroundColor: "red",
-  },
 };
 
 const styles = StyleSheet.create({

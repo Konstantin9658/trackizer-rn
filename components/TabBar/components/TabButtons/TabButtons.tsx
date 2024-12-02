@@ -3,8 +3,8 @@ import { styles } from "./styles";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 
 export const TabButtons = (props: BottomTabBarProps) => {
-  const { state, descriptors, navigation, insets, ...rest } = props;
-  console.log(insets);
+  const { state, descriptors, navigation, ...rest } = props;
+
   return state.routes.map((route, index) => {
     const { options } = descriptors[route.key];
     const isFocused = state.index === index;

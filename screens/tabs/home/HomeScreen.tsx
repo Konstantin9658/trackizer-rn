@@ -10,7 +10,7 @@ import { tabsHeight } from "@/store/app";
 export const HomeScreen = () => {
   const [currentTabsHeight] = useAtom(tabsHeight);
 
-  const offsetBottom = currentTabsHeight + 30;
+  const offsetBottom = currentTabsHeight;
 
   return (
     <GestureHandlerRootView style={styles.container}>
