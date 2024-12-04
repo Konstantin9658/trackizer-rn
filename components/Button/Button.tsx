@@ -1,11 +1,11 @@
-import { Pressable, Text } from "react-native";
+import { Pressable, Text, ViewStyle } from "react-native";
 import { CustomButtonProps } from "./types";
 import { styles } from "./styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { Colors } from "@/constants/Colors";
 
 export const Button = (props: CustomButtonProps) => {
-  const { variant, children, text, size = "normal", ...rest } = props;
+  const { variant, children, text, style, size = "normal", ...rest } = props;
   const content = children || (
     <Text style={[styles.text, size === "small" && styles.text_small]}>
       {text}
@@ -16,6 +16,7 @@ export const Button = (props: CustomButtonProps) => {
     <Pressable
       style={({ pressed }) => [
         styles.button,
+        style as ViewStyle,
         styles[`button_${variant}`],
         pressed && styles.button_pressed,
         size === "small" && styles.button_small,
