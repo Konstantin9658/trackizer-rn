@@ -5,7 +5,15 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Colors } from "@/constants/Colors";
 
 export const Button = (props: CustomButtonProps) => {
-  const { variant, children, text, style, size = "normal", ...rest } = props;
+  const {
+    variant,
+    children,
+    text,
+    style,
+    iconOnly = false,
+    size = "normal",
+    ...rest
+  } = props;
   const content = children || (
     <Text style={[styles.text, size === "small" && styles.text_small]}>
       {text}
@@ -20,6 +28,7 @@ export const Button = (props: CustomButtonProps) => {
         styles[`button_${variant}`],
         pressed && styles.button_pressed,
         size === "small" && styles.button_small,
+        iconOnly && styles.button_icon,
       ]}
       {...rest}
     >

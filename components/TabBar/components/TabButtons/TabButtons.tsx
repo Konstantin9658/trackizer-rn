@@ -1,6 +1,7 @@
 import { TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
+import { router } from "expo-router";
 
 export const TabButtons = (props: BottomTabBarProps) => {
   const { state, descriptors, navigation, ...rest } = props;
@@ -21,6 +22,8 @@ export const TabButtons = (props: BottomTabBarProps) => {
           : route.name;
 
     const onPress = () => {
+      if (route.name === "new") return router.push("/new-subs");
+
       const event = navigation.emit({
         type: "tabPress",
         target: route.key,

@@ -9,4 +9,5 @@ export interface CustomButtonProps extends PressableProps {
   size?: SizeButton;
   text?: string;
   children?: ReactNode;
+  iconOnly?: boolean;
 }
