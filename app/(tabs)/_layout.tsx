@@ -5,6 +5,7 @@ import { IconCreditCards } from "@/assets/Icons/TabIcon/IconCredirCards";
 import { IconHome } from "@/assets/Icons/TabIcon/IconHome";
 import { ButtonSettings } from "@/components/ButtonSettings/ButtonSettings";
 import { TabBar } from "@/components/TabBar/TabBar";
+import { flexible } from "@/styles/flex";
 import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
 import { Tabs } from "expo-router";
 import { StyleSheet } from "react-native";
@@ -16,9 +17,6 @@ const TABS_SCREEN_OPTIONS: BottomTabNavigationOptions = {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   offsetIcon: {
     top: -15,
   },
@@ -26,7 +24,7 @@ const styles = StyleSheet.create({
 
 export default function TabLayout() {
   return (
-    <SafeAreaView edges={["bottom"]} style={styles.container}>
+    <SafeAreaView edges={["bottom"]} style={flexible.flex}>
       <ButtonSettings />
       <Tabs
         tabBar={(props) => <TabBar {...props} />}
@@ -49,7 +47,8 @@ export default function TabLayout() {
         <Tabs.Screen
           name="new"
           options={{
-            title: "New subs",
+            title: "New",
+            href: null,
             tabBarIcon: ({ focused }) => (
               <IconAddNew focused={focused} style={styles.offsetIcon} />
             ),

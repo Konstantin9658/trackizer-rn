@@ -9,7 +9,7 @@ export const ButtonSettings = (props: PressableProps) => {
     <Pressable
       style={styles.button}
       {...props}
-      onPress={navigateTo(Routes.settings)}
+      onPress={navigateTo(Routes.newSubs)}
     >
       {({ pressed }) => <IconSettings style={pressed && styles.pressed} />}
     </Pressable>

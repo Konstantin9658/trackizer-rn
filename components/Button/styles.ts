@@ -12,6 +12,11 @@ export const styles = StyleSheet.create({
     position: "relative",
     paddingVertical: 14,
   },
+  button_icon: {
+    borderRadius: 16,
+    width: 48,
+    height: 48,
+  },
   button_small: {
     paddingHorizontal: 12,
     paddingVertical: 8,
@@ -29,7 +34,7 @@ export const styles = StyleSheet.create({
     borderRadius: 30,
   },
   button_secondary: {
-    backgroundColor: Colors.white_10,
+    backgroundColor: Colors.gray_20,
     borderColor: Colors.white_10,
   },
   button_primary: {

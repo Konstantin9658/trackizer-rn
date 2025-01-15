@@ -16,6 +16,7 @@ export const LineHeight = {
   lh20: 20,
   lh24: 24,
   lh32: 32,
+  lh36: 36,
   lh40: 40,
   lh48: 48,
   lh56: 56,

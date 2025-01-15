@@ -9,12 +9,17 @@ export const Input = ({
   hasError = false,
   errorMessage,
   variant = "left",
+  labelSize = "normal",
   ...props
 }: InputProps) => {
   return (
     <View>
       <Text
-        style={[styles.label, variant === "center" && styles.label_centered]}
+        style={[
+          styles.label,
+          variant === "center" && styles.label_centered,
+          labelSize === "small" && styles.label_small,
+        ]}
       >
         {label}
       </Text>

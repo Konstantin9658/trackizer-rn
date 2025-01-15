@@ -28,4 +28,9 @@ export const styles = StyleSheet.create({
   label_centered: {
     textAlign: "center",
   },
+  label_small: {
+    fontSize: FontSize.fs12,
+    lineHeight: LineHeight.lh16,
+    letterSpacing: 0.2,
+  },
 });
